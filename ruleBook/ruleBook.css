@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'MyFontFamily';
+    src: url(../Assets/Fonts/Super\ Mario\ Bros.\ 2.ttf) format('truetype');
+}
+
+
+h1{
+    font-size: 3rem;
+    color: #FCF6DC;
+    font-family: 'MyFontFamily', Arial, sans-serif;
+}
+
+body{
+    background-color: #061C39;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+    padding-top: 1.5rem;
+}
+
+ol{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 1.5rem;
+    color: #FCF6DC;
+    font-family: 'MyFontFamily', Arial, sans-serif;
+    list-style-type: square;
+}
