@@ -25,6 +25,8 @@ a{
     
 }
 
+
+
 a:hover{
     background-color: rgba(90, 92, 93, 0.5);
 }
@@ -34,8 +36,8 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 3rem;
     align-items: center;
+    gap: 3rem;
     padding-top: 1.5rem;
 }
 
@@ -77,4 +79,27 @@ body{
 }
 .blue{
     background-color: blue;
+}
+
+#startBtn{
+    font-size: 1rem;
+    color: #FCF6DC;
+    background-color: #061C39;
+    font-family: 'MyFontFamily', Arial, sans-serif;
+    text-decoration: none;
+    border: 5px solid #FCF6DC;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+@media screen and (max-width:1000px) {
+    h1{
+        font-size: 1.5rem;
+    }
+
+    .container{
+        gap: 1rem;
+        width: 350px;
+        height: 350px;
+    }
 }
