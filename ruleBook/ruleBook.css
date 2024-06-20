@@ -30,3 +30,12 @@ ol{
     font-family: 'MyFontFamily', Arial, sans-serif;
     list-style-type: square;
 }
+
+@media screen and (max-width: 1000px) {
+    h1{
+        font-size: 2.5rem;
+    }
+    ol{
+        font-size: 1.2rem;
+    }
+}
