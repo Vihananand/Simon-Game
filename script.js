@@ -4,13 +4,52 @@ var userClickedPattern = [];
 var started = false;
 var level = 0;
 
-$(document).keypress(function () { 
+function startGame(){
     if(!started){
         $("h1").text("Level " + level);
         $("a").fadeOut(300);
         nextSequence();
         started = true;
     }
+}
+
+
+function isTouchDevice() {
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+}
+function isMobile() {
+    return /Mobi|Android/i.test(navigator.userAgent);
+}
+
+function isTablet() {
+    return /iPad|Tablet|PlayBook|Silk/i.test(navigator.userAgent) || (isMobile() && (screen.width >= 768 && screen.height >= 768));
+}
+
+if (isTouchDevice() || isMobile() || isTablet()) {
+    $("h1").text("Press the button below to start!");
+        $("#startBtn").click(function () { 
+            startGame();
+            $("#startBtn").fadeOut();
+        });
+}
+else {
+    $("h1").text("Press a key to start!");
+        $("#startBtn").hide();
+}
+
+function updateText(){
+    if($(window).width() <= 800){
+        
+    }
+    else{
+        
+    }
+}
+updateText();
+$(window).resize(updateText);
+
+$(document).keypress(function () { 
+    startGame();
 });
 
 $('.btn').click(function () { 
@@ -40,7 +79,14 @@ function checkAnswer(currentLevel){
         setTimeout(function(){
             $("body").css("background-color", "#061C39")
         },200);
-        $("h1").text("Game Over! \n Press a key to start!");
+        
+        if(isTouchDevice() || isMobile() || isTablet()){
+            $("h1").text("Game Over! Press the button below to start again!");
+            $("#startBtn").fadeIn();
+        }
+        else{
+            $("h1").text("Game Over! \n Press a key to start!");
+        }
 
         playSound("wrong");
         startOver();
